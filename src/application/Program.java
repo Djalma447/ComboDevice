@@ -1,20 +1,27 @@
 package application;
 
-import entities.Printer;
-import entities.Scanner;
+import entities.ComboDevice;
+import entities.ConcretePrinter;
+import entities.ConcreteScanner;
 
 public class Program {
 
 	public static void main(String[] args) {
 
-		Printer p = new Printer("2008");
+		ConcretePrinter p = new ConcretePrinter("2008");
 		p.processDoc("My Letter");
 		p.print("My Letter");
 
 		System.out.println();
-		Scanner s = new Scanner("2010");
+		ConcreteScanner s = new ConcreteScanner("2010");
 		s.processDoc("My Document");
 		System.out.println("Scan processing: " + s.scan());
+		
+		System.out.println();
+		ComboDevice c = new ComboDevice("2032");
+		c.processDoc("My dissertation");
+		c.print("My dissertation");
+		System.out.println("Scanning result: " + c.scan());
 	}
 
 }
